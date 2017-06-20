@@ -1,0 +1,9 @@
+
+# Build folder
+__pycache__/
+
+# pyc file
+*.pyc
+
+# batch file
+*.bat
