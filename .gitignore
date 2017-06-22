@@ -7,3 +7,6 @@ __pycache__/
 
 # batch file
 *.bat
+
+# my pratice folder
+practice/
