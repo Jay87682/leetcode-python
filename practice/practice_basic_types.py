@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 strings are immutable sequences of Unicode code points.
 """
@@ -11,8 +13,9 @@ strings are immutable sequences of Unicode code points.
 # test_1 = 'test_1'
 # print(id(test_1))
 # print(id(test_1.join('test_2')))
-# chinese=u'中文
+# chinese=u'中文'
 # print(str('元').encode('big5').decode('unicode_escape'))
+# print(chinese)
 # print(chinese.encode(encoding='big5', errors='strict'))
 # print(str(chinese).encode(encoding='big5', errors='strict'))
 

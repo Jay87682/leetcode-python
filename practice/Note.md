@@ -1,4 +1,5 @@
  -----Python Data Model----
+[Python official doc.](https://docs.python.org/3/reference/datamodel.html) 
 3.1 Objects, values and types
 * Objects are Python's abstraction for data.
 * All data in a Python program:
@@ -39,30 +40,28 @@
 
  * Type
     - None:
-      -> This type has a single value.
-      -> This is the single object with this value
-      -> It's truth value is false???
+      - This type has a single value.
+      - This is the single object with this value
+      - It's truth value is false
 
-    -  NotImplemented: TBD.....
+    - NotImplemented: TBD.....
 
-    -  numbers.Number: Distinguish between integers, floating point number, complex number
-      -> Integral
-        -> Integers(int)
-        -> Booleans(bool)
-            (Boolean is the type of Intergal)
-      -> Real(float)
-        -> Python only support the double precision floating point number
+    - numbers.Number: Distinguish between integers, floating point number, complex number
+      - Integral
+        - Integers(int)
+        - Booleans(bool) (Boolean is the type of Intergal)
+        - Real(float)
+          - Python only support the double precision floating point number
         (Not support single-precision floating point number)
-      -> Complex
-        -> ex: 1-3j: 1 => real, 3j => imag
+        - Complex
+          - ex: 1-3j: 1 => real, 3j => imag
 
     - Sequences: Finite ordered sets indexed by non-negative numbers
-      -> Supporting slice: a[i:j]
+      - Supporting slice: a[i:j]
         (Some sequences also support "extended slicing" a[i:j:k] which selects
         items of a index x where x = i+n*k, n>=0, i <=x<j)
-
-      -> Mutability:
-          -> immutable sequence
-            -> Strings, Number, Tuples, Bytes
-          -> mutable sequence
-            -> Lists, Byte Arrays,
+      - Mutability:
+          - immutable sequence
+            - Strings, Number, Tuples, Bytes
+          - mutable sequence
+            - Lists, Byte Arrays,

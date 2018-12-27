@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 ###### User defined functions ######
 
 """ Functions are first-class functions """
@@ -13,10 +13,17 @@
 # def my_func(test):
 #     def prefix_msg():
 #         return "test string: "
-#
-#     return x() + test
-#
+
+#     return prefix_msg() + test
+
 # print(my_func("hello"))
+
+# def add1(x):
+#   def add2(y):
+#     return x+y
+#   return add2
+# nest_add=add1(1)
+# print(nest_add(3))
 
 ## Functions as parameters
 # def my_func(test):
@@ -109,7 +116,10 @@
 # print(sys.getsizeof(1235)) #string
 
 """ Iterator objects def. """
+## In python2
 # print([1, 2, 3].__iter__().next())
+## In python3
+# print([1, 2, 3].__iter__().__next__())
 
 # class NumberGenerator:
 #     class Iterator:

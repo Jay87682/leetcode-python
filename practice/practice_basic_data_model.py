@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 ######### dir() #########
 """
@@ -40,9 +40,11 @@ a and b will have different id
 """
 Note: a and b will have the same id in this case
 """
-# a = b = []
+# a = b = ['123', '456']
+# a.append('789')
 # print(hex(id(a)))
 # print(hex(id(b)))
+# print(b)    #['123', '456', '789']
 
 ######### Numbers lib ########
 # import numbers
@@ -87,10 +89,29 @@ Immutable sequences
 
 ## tuples
 # tuple_t = (1, "2", 3+1j)
+# print(id(tuple_t))
 # print(tuple_t.__hash__())
 # print(tuple_t.__eq__((1, "2", 3+2j)))
 # del tuple_t[0] # Will error
 # tuple_t[0] = 3  # Will error
+
+"""""
+Note1: Hashing and Immutability are related
+    Because objects which are used hash keys must typically be immutable so that
+the hash value doesn't change.
+For instance:
+
+    tuple_t = (1, "2", 3+1j)
+    print(id(tuple_t))
+    print(tuple_t.__hash__())
+    tuple_t = tuple_t + (1)
+    print(id(tuple_t))
+    print(tuple_t.__hash__())
+
+Note2: Hashing is the process of converting some large amount of data into a much
+smaller amount(ex: integer). The look up in a table in constant-time O(1).
+
+"""""
 
 
 """
@@ -105,7 +126,7 @@ Mutable sequences
 
 
 ######### Set ########
-## Unordered finite sets of unique, immutable objects.
+## Unordered finite sets of unique, immutable objects. Set is mutable
 ## "Set" cannot be indexed by any subscript but support iterated over.
 ## Common use: Fast membership testing, removing duplicates from a sequence,
 ##             computing mathematical operations (intersection, union, difference
@@ -148,7 +169,8 @@ Mutable
 
 ## add and update
 # family = {'lili', 'kely'}
-# # family.add({'joe', 'hua'})  #Error due to set is unhashable
+# family.add({'joe', 'hua'})  #Error due to set is unhashable
+# family.add(['joe', 'hua'])  #Error due to list is unhashable
 # # Correct, like: for name in {'joe', 'hua'} family.add(name)
 # family.update({'joe', 'hua'})
 # print(family)
@@ -176,8 +198,7 @@ Mutable
 # dict_t = { {1,2,3}: 123, 456: 456}  # work! tuple is immutable
 # dict_t = { [1,2,3]: 123, 456: 456}  # error! list is mutable
 # print(dict_t[(1,2,3)])
-
-## Add new item  (dict has no add or __add_)
+## Add new item  (dict has no add or __add__)
 # password = { "jay": 123, "joe": 456 }
 ## For duplicated keys, the later will replace the previous one
 # password = { 1: 12345, 2: 456, 1:1234 } # password is {1:1234, 2:456}
@@ -194,7 +215,7 @@ Mutable
 # print(password.get("ken", "No password"))
 
 ## Take the item (key, value) which is presented as tuple.
-# print(password.items())
+# print(password.items()) #([('joe', 456), ('jay', 123)])
 ## Apply the set operator
 # print({'x', 'y'}.union(password.items()))
 ## Note: Using |, &, ^ will error.
@@ -212,4 +233,5 @@ Mutable
 
 ## Get the values only which is presented as list
 ## Like items(), keys() function. Able to apply the set operation function.
-# print(password.values())
+# print(password.keys()) #['joe', 'jay']
+# print(password.values()) #[456, 123]
