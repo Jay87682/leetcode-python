@@ -6,7 +6,7 @@ class Node(object):
         self.next = None
 
     def printVale(self):
-        print(self.val);
+        print(self.val)
 
 
 """Test code"""

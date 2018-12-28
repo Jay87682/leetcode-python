@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from random import randint
 from node import Node
 from listnode import ListNode
@@ -27,6 +28,6 @@ class AutoGenIntList(ListNode):
 
 
 """Test Code"""
-# AgList = AutoGenIntList(0, 100)
-# AgList.genIntList()
-# print(AgList.list)
+AgList = AutoGenIntList(0, 100)
+AgList.genIntList()
+print(AgList.list)
