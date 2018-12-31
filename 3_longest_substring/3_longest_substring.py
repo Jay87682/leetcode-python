@@ -7,14 +7,15 @@ class Solution:
         :rtype: int
         """
         longest_len = 0
-        longest_list = []
-        for x in s:
-            if x in longest_list:
-                reset_start = longest_list.index(x) + 1
-                del longest_list[:reset_start]
+        longest_dic = {}
+        pivot_start = 0
+        for idx, x in enumerate(s):
+            guss_pivot = longest_dic.get(x)
+            if guss_pivot != None and guss_pivot >= pivot_start:
+                pivot_start = guss_pivot + 1
 
-            longest_list.append(x)
-            longest_len = max(len(longest_list), longest_len)
+            longest_dic[x] = idx
+            longest_len = max(idx - pivot_start + 1, longest_len)
         return longest_len
 
 s = "ggububgvfk"
